@@ -1,0 +1,16 @@
+{
+    "contents" : "# install.packages(\"devtools\")\n# devtools::install_github(\"klutometis/roxygen\")\nlibrary(\"devtools\")\nlibrary(roxygen2)\n\n\nsetwd(\"E:/R/\")\n# create(\"EcotopePackage\")\n# setwd(\"./EcotopePackage\")\n# document()\ninstall(\"EcotopePackage\")\nlibrary(EcotopePackage)\n# install_github('Ecotope/EcotopePackage')\n\ndevtools::document()\n\n\n\n? continuous_uniform_time\n? cdx\n? name_fix\n? omit_NA_cols\n? omit_zero_cols\n? omit_NA_or_zero_cols\n? rbind.all.columns\n? single_pt_avg_impute\n? var_range_fix\n? stata_time_to_R_time\n",
+    "created" : 1428594298791.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4278629330",
+    "id" : "E4AD42C9",
+    "lastKnownWriteTime" : 1429223023,
+    "path" : "~/package_making_scratch.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

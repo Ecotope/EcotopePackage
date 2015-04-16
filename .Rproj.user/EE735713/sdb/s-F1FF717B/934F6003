@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Adds non-present time stamps in median increments.\n#'\n#' @param xtmpfile A dataframe to modify.\n#' @param DateTime The name of the time variable.\n#' @examples\n#'\n#' No examples yet\n\n\ncontinuous_uniform_time=function(tmpfile,DateTime){\n  ind=which(names(tmpfile)==DateTime)\n\n\n  na_time=which(is.na(tmpfile[,ind]))\n  if(sum(na_time)>0) tmpfile=tmpfile[-na_time,]\n\n\n  #sort by time\n  tmpfile=tmpfile[order(tmpfile[,ind]),]\n  #find median time difference\n  time_diff=median(diff(tmpfile[,ind]))\n  #make all wanted time stamps\n#   hold=seq(from=tmpfile[,ind][1],to=tmpfile[,ind][nrow(tmpfile)],by=time_diff)\n  hold=seq(from=min(tmpfile[,ind]),to=max(tmpfile[,ind][nrow(tmpfile)]),by=time_diff)\n  dum_time=data.frame(hold)\n  names(dum_time)=DateTime\n  #force all wanted time stamps into dataframe\n  this=merge(tmpfile,dum_time,by=DateTime,all=TRUE)\n  this=this[order(this[,ind]),]\n\n  return(this)\n\n}\n",
+    "created" : 1429221375941.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "767944222",
+    "id" : "934F6003",
+    "lastKnownWriteTime" : 1429221426,
+    "path" : "E:/R/EcotopePackage/R/continuous_uniform_time.R",
+    "project_path" : "R/continuous_uniform_time.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
