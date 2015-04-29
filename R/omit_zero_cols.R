@@ -8,7 +8,7 @@
 
 omit_zero_cols=function(tmpfile){
   zero_cols=apply(tmpfile,2,function(x){
-    summm=sum(as.numeric(x))
+    summm=try(sum(as.numeric(x)),silent=TRUE)
     if (is.na(summm)) {
       return(FALSE)
     } else if (summm==0) {
