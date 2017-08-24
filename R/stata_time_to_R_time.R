@@ -5,6 +5,11 @@
 
 
 stata_time_to_R_time<-function(times) {
-	time<-as.POSIXct(times/1000,origin="1960-01-01",tz="GMT")
+  if (inherits(times, "POSIXt")) {
+    time <- times
+  }
+  else {
+    time<-as.POSIXct(times/1000,origin="1960-01-01",tz="GMT")
+  }
 	return(time)
 }
